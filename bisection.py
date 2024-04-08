@@ -28,7 +28,7 @@ def string_to_function(expression):
 
 # then we start by diving the length of the interval to get to the root
 # f: function that we want to find the root of, a: start of the interval, b: end of the interval, e: maximum desired error, d: number of digits that we are allowed to store after decimal point, i: maximum number of iteration desired, which is 20 by default
-def bisection_method(f, a, b, e, d, i = 20):
+def bisection_method(f, a, b, e = 10**(-2), d = 2, i = 20):
     a, b = round(a, d), round(b, d)
     iterations = (
         list()
