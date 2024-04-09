@@ -132,8 +132,8 @@ class Ui_MainWindow(object):
             if statement in ['cos(x)', 'sin(x)', 'tan(x)', 'cot(x)']:
                statement = statement.replace(statement , "np."+statement)
             function = bisection.string_to_function(statement)
-            self.lineEdit.setText(str(bisection.root_interval_finder(function)))
-            array = bisection.bisection_method(function,*bisection.root_interval_finder(function), 10 ** (-50), 50)[1]
+            # self.lineEdit.setText(str(bisection.root_interval_finder(function)))
+            array = bisection.bisection_method(function, 1, 2, 10**(-2), 2, 20)[1]
             self.tableWidget.setRowCount(len(array[0]))
             n=0
             for arr in array:
