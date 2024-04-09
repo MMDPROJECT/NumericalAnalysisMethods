@@ -1,30 +1,21 @@
 # Bisection Method
 
 import numpy as np
+from sympy import sympify, symbols
 
-# for example function f(x) is given
-# def f(x):
-#     return np.cos(x)
+class func():
+    def __init__(self, symbol, expression) -> None:
+        self.symbol = symbols(symbol)
+        self.func = sympify(expression)
 
+    def __call__(self, x):
+        return self.func.subs(self.symbol, x)
 
-def string_to_function(expression):
-    def function(x):
-        return eval(expression)
-    return function
-
-# we start off by finding a root interval; It will return a single number if it has already found the root or return a tuple consisting (a, b)
-# def root_interval_finder(f):
-#     a, b = 1, 2
-#     f_a, f_b = f(a), f(b)
-
-#     while True:
-#         if f_a == 0: return a
-#         elif f_b == 0: return b
-#         elif f_a * f_b < 0: return (a, b)
-#         else: 
-#             a -= 10
-#             b += 10
-
+# this function converts a given symbol and a expression defined by that to a function. symbol: is something like 'x' or 'y', expression: any arbitrary mathematical expression related to the single given symbol
+def string_to_function(symbol, expression):
+    symbol = symbols(symbol)
+    func = sympify(expression)
+    return func
 
 # then we start by diving the length of the interval to get to the root
 # f: function that we want to find the root of, a: start of the interval, b: end of the interval, e: maximum desired error, d: number of digits that we are allowed to store after decimal point, i: maximum number of iteration desired, which is 20 by default
@@ -53,3 +44,4 @@ def bisection_method(f, a, b, e = 10**(-2), d = 2, i = 20):
         # checking if the error is low
         if f_c <= e or abs(a - b) <= e:
             return [c, iterations]
+        
