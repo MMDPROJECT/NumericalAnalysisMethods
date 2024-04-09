@@ -27,16 +27,21 @@ def bisection_method(f, a, b, e = 10**(-2), d = 2, i = 20):
         # storing information
         iterations.append([a, f_a, b, f_b, c, f_c, iteration_number])
 
-        # checking if c is the root
-        if f_c == 0:
+        # checking if either a, b or c is the root 
+        if f_a == 0:
+            return [a, iterations]
+        elif f_c == 0:
             return [c, iterations]
-        elif f_a * f_c < 0:
-            b = c
-        else:
-            a = c
+        elif f_b == 0:
+            return [b, iterations]
         # checking if the error is low
         if f_c <= e or abs(a - b) <= e:
             return [c, iterations]
+        else:
+            if f_a * f_c < 0:
+                b = c
+            else: 
+                a = c
         
 """
 -------------------------------------------------------------------------------------------------
@@ -67,9 +72,11 @@ fig, ax = plt.subplots(figsize=(8, 6))
 
 for i, abc_tuple in enumerate(abc_tuples):
     a, b, c = abc_tuple[0], abc_tuple[1], abc_tuple[2]
-    ax.scatter(a, f(a), c=colors[i])
-    ax.scatter(b, f(b), c=colors[i])
+    # ax.scatter(a, f(a), c=colors[i])
+    # ax.scatter(b, f(b), c=colors[i])
     ax.scatter(c, f(c), c=colors[i], label=f'i={i}')
+
+ax.scatter(x_final, f(x_final), c= 'red', label= f'answer')
         
 
 plt.plot(x, y)
