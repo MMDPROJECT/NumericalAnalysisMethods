@@ -2,14 +2,9 @@
 
 import numpy as np
 from sympy import sympify, symbols
+from sympy.utilities.lambdify import lambdify
 
-class func():
-    def __init__(self, symbol, expression) -> None:
-        self.symbol = symbols(symbol)
-        self.func = sympify(expression)
-
-    def __call__(self, x):
-        return self.func.subs(self.symbol, x)
+import matplotlib.pyplot as plt
 
 # this function converts a given symbol and a expression defined by that to a function. symbol: is something like 'x' or 'y', expression: any arbitrary mathematical expression related to the single given symbol
 def string_to_function(symbol, expression):
@@ -43,7 +38,7 @@ def bisection_method(f, a, b, e = 10**(-2), d = 2, i = 20):
         if f_c <= e or abs(a - b) <= e:
             return [c, iterations]
         
-f = func("x", "x^2 - 1")
+f = lambdify('x', "sin(x)",'numpy') # returns a numpy-ready function
 a, b = 0, 2
 
-print(bisection_method(f, a, b))
+arr = bisection_method(f, a, b)
