@@ -2,13 +2,19 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>785</width>
-    <height>600</height>
+    <width>1334</width>
+    <height>817</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>OpenHandCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -20,11 +26,19 @@
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>310</y>
+      <x>20</x>
+      <y>290</y>
       <width>711</width>
-      <height>241</height>
+      <height>441</height>
      </rect>
+    </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>OpenHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:&quot;white&quot;;
+font-weight:bold;
+font-size:14px;</string>
     </property>
     <column>
      <property name="text">
@@ -65,11 +79,16 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>100</y>
+      <x>463</x>
+      <y>80</y>
       <width>58</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:&quot;white&quot;;
+font-weight:bold;
+font-size:15px;</string>
     </property>
     <property name="text">
      <string>a = </string>
@@ -78,24 +97,28 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>220</y>
+      <x>720</x>
+      <y>150</y>
       <width>191</width>
       <height>41</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">#pushButton{
-border:1px solid white;
+border:none;
 border-radius:15px;
 background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0 y2:0, stop:0 #7036be , stop:1 #269ef1);
 font-weight:bold;
 color:#fff;
 font-size:20px;
-box-shadow:0 5px 18px rgb(0 0 0 / 8%);
+
 }
 #pushButton:hover{
-transition:all .3s ease;
+    background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0 y2:0, stop:0 #269ef1 , stop:1 #7036be);
+
 }</string>
     </property>
     <property name="text">
@@ -105,27 +128,37 @@ transition:all .3s ease;
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>100</y>
+      <x>523</x>
+      <y>80</y>
       <width>113</width>
       <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #55C682;
-border-color:#212554;
+     <string notr="true">border-color:#212554;
 border-radius:10px;
-border:1px solid white;</string>
+color:&quot;white&quot;;
+border:2px solid white;
+padding-left:5px;
+font-weight:bold;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>100</y>
+      <x>763</x>
+      <y>80</y>
       <width>113</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-color:#212554;
+border-radius:10px;
+border:2px solid white;
+color:&quot;white&quot;;
+padding-left:5px;
+font-weight:bold;</string>
     </property>
     <property name="text">
      <string/>
@@ -134,11 +167,16 @@ border:1px solid white;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>100</y>
+      <x>703</x>
+      <y>80</y>
       <width>58</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:&quot;white&quot;;
+font-weight:bold;
+font-size:15px;</string>
     </property>
     <property name="text">
      <string>b = </string>
@@ -147,14 +185,16 @@ border:1px solid white;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>80</y>
-      <width>91</width>
+      <x>313</x>
+      <y>60</y>
+      <width>101</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:#55C682;</string>
+     <string notr="true">color:&quot;white&quot;;
+font-weight:bold;
+font-size:15px;</string>
     </property>
     <property name="text">
      <string>Itervals : (a,b)</string>
@@ -163,11 +203,16 @@ border:1px solid white;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>180</y>
-      <width>61</width>
-      <height>16</height>
+      <x>313</x>
+      <y>160</y>
+      <width>71</width>
+      <height>20</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:&quot;white&quot;;
+font-weight:bold;
+font-size:15px;</string>
     </property>
     <property name="text">
      <string>|a-b| &lt; 10</string>
@@ -176,11 +221,15 @@ border:1px solid white;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>170</y>
+      <x>380</x>
+      <y>150</y>
       <width>21</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:&quot;white&quot;;
+font-weight:bold;</string>
     </property>
     <property name="text">
      <string>-k</string>
@@ -189,47 +238,55 @@ border:1px solid white;</string>
    <widget class="QLineEdit" name="lineEdit_3">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>180</y>
+      <x>523</x>
+      <y>160</y>
       <width>113</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-color:#212554;
+border-radius:10px;
+border:2px solid white;
+color:&quot;white&quot;;
+padding-left:5px;
+font-weight:bold;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>180</y>
+      <x>463</x>
+      <y>160</y>
       <width>58</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:&quot;white&quot;;
+font-weight:bold;
+font-size:15px;</string>
     </property>
     <property name="text">
      <string>k = </string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>427</x>
-      <y>180</y>
-      <width>161</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Add 'k' as Maximum Error</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="lineEdit_4">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>40</y>
+      <x>623</x>
+      <y>20</y>
       <width>113</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-color:#212554;
+border-radius:10px;
+border:2px solid white;
+color:&quot;white&quot;;
+padding-left:5px;
+font-weight:bold;</string>
     </property>
     <property name="text">
      <string/>
@@ -238,19 +295,128 @@ border:1px solid white;</string>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>197</x>
-      <y>40</y>
-      <width>151</width>
+      <x>440</x>
+      <y>20</y>
+      <width>161</width>
       <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #E52D35</string>
+     <string notr="true">color:&quot;white&quot;;
+font-weight:bold;
+font-size:15px;</string>
     </property>
     <property name="text">
      <string>Add Desire Function = </string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>280</y>
+      <width>571</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0 y2:0, stop:0 #7036be , stop:1 #269ef1);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>731</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1 y2:0, stop:0 #7036be , stop:1 #269ef1);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>430</y>
+      <width>241</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:100px;
+font-weight:bold;
+color:qlineargradient(spread:pad, x1:60, y1:95, x2:100 y2:1, stop:0 #7036be , stop:1 #269ef1);</string>
+    </property>
+    <property name="text">
+     <string>Table</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>759</x>
+      <y>289</y>
+      <width>551</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <property name="cursor">
+        <cursorShape>OpenHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-size: cover;</string>
+       </property>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>130</y>
+          <width>241</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size:100px;
+font-weight:bold;
+color:qlineargradient(spread:pad, x1:50, y1:1, x2:0 y2:25, stop:0 #7036be , stop:1 #269ef1);</string>
+        </property>
+        <property name="text">
+         <string>plot</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <zorder>label_5</zorder>
+   <zorder>label_10</zorder>
+   <zorder>label_9</zorder>
+   <zorder>tableWidget</zorder>
+   <zorder>label</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>lineEdit_2</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>lineEdit_3</zorder>
+   <zorder>label_6</zorder>
+   <zorder>lineEdit_4</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_12</zorder>
+   <zorder>verticalLayoutWidget</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

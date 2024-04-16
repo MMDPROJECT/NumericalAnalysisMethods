@@ -49,7 +49,7 @@ Sample code for how to evaluate the given string and finding it's root using bis
 """
         
 f = lambdify('x', "sin(x)",'numpy') # returns a numpy-ready function
-a, b = 0, 2
+a, b = 1, 100
 
 arr = bisection_method(f, a, b)
 print(arr)
@@ -77,7 +77,7 @@ for i, abc_tuple in enumerate(abc_tuples):
     ax.scatter(c, f(c), c=colors[i], label=f'i={i}')
 
 ax.scatter(x_final, f(x_final), c= 'red', label= f'answer')
-        
+
 
 plt.plot(x, y)
 plt.xlabel('x')
