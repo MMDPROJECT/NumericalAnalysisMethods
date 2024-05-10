@@ -29,7 +29,7 @@ def bisection_method(f, a, b, e = 10**(-2), d = 2, i = 20):
         elif f_b == 0:
             return [b, iterations]
         # checking if the error is low
-        if f_c <= e or abs(a - b) <= e:
+        if abs(f_c) <= e or abs(a - b) <= e:
             return [c, iterations]
         else:
             if f_a * f_c < 0:
