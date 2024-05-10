@@ -48,43 +48,43 @@ def bisection_method(f, a, b, e = 10**(-2), d = 2, i = 20):
 Sample code for how to evaluate the given string and finding it's root using bisection method and then plotting it using matplotlib
 """
         
-f = lambdify('x', "sin(x)",'numpy') # returns a numpy-ready function
-a, b = 1, 100
+# f = lambdify('x', "sin(x)",'numpy') # returns a numpy-ready function
+# a, b = 1, 100
 
-arr = bisection_method(f, a, b)
-print(arr)
+# arr = bisection_method(f, a, b)
+# print(arr)
 
-# extracting the points obtained by the bisection method
-iteration_points = np.array(arr[1])[:, [0, 2, 4]].reshape(-1)
-x_final = arr[0]
+# # extracting the points obtained by the bisection method
+# iteration_points = np.array(arr[1])[:, [0, 2, 4]].reshape(-1)
+# x_final = arr[0]
 
-# generating an array of points around the obtained interval by a small tolerance
-x = np.linspace(min(iteration_points), max(iteration_points), 1000)
-y = f(x)
+# # generating an array of points around the obtained interval by a small tolerance
+# x = np.linspace(min(iteration_points), max(iteration_points), 1000)
+# y = f(x)
 
-# scatter plot
-abc_tuples =  np.array(arr[1])[:, [0, 2, 4]]
-# print(abc_tuples)
-iteration_numbers = np.array(arr[1])[:, 6]
-colors = np.random.rand(len(abc_tuples), 3)
+# # scatter plot
+# abc_tuples =  np.array(arr[1])[:, [0, 2, 4]]
+# # print(abc_tuples)
+# iteration_numbers = np.array(arr[1])[:, 6]
+# colors = np.random.rand(len(abc_tuples), 3)
 
-fig, ax = plt.subplots(figsize=(8, 6))
+# fig, ax = plt.subplots(figsize=(8, 6))
 
-for i, abc_tuple in enumerate(abc_tuples):
-    a, b, c = abc_tuple[0], abc_tuple[1], abc_tuple[2]
-    # ax.scatter(a, f(a), c=colors[i])
-    # ax.scatter(b, f(b), c=colors[i])
-    ax.scatter(c, f(c), c=colors[i], label=f'i={i}')
+# for i, abc_tuple in enumerate(abc_tuples):
+#     a, b, c = abc_tuple[0], abc_tuple[1], abc_tuple[2]
+#     # ax.scatter(a, f(a), c=colors[i])
+#     # ax.scatter(b, f(b), c=colors[i])
+#     ax.scatter(c, f(c), c=colors[i], label=f'i={i}')
 
-ax.scatter(x_final, f(x_final), c= 'red', label= f'answer')
+# ax.scatter(x_final, f(x_final), c= 'red', label= f'answer')
 
 
-plt.plot(x, y)
-plt.xlabel('x')
-plt.ylabel('f(x)')
-plt.title('Plot of f(x)')
-plt.grid(True)
-plt.legend()
-plt.show()
+# plt.plot(x, y)
+# plt.xlabel('x')
+# plt.ylabel('f(x)')
+# plt.title('Plot of f(x)')
+# plt.grid(True)
+# plt.legend()
+# plt.show()
 
-""""-------------------------------------------------------------------------------------------------"""
+# """"-------------------------------------------------------------------------------------------------"""
