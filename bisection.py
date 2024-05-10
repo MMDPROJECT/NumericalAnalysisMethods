@@ -6,12 +6,6 @@ from sympy.utilities.lambdify import lambdify
 
 import matplotlib.pyplot as plt
 
-# this function converts a given symbol and a expression defined by that to a function. symbol: is something like 'x' or 'y', expression: any arbitrary mathematical expression related to the single given symbol
-def string_to_function(symbol, expression):
-    symbol = symbols(symbol)
-    func = sympify(expression)
-    return func
-
 # then we start by diving the length of the interval to get to the root
 # f: function that we want to find the root of, a: start of the interval, b: end of the interval, e: maximum desired error, d: number of digits that we are allowed to store after decimal point, i: maximum number of iteration desired, which is 20 by default
 def bisection_method(f, a, b, e = 10**(-2), d = 2, i = 20):
