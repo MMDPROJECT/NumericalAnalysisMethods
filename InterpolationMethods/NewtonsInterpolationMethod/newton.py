@@ -15,7 +15,7 @@ points = []
 while(1):
     point = input(f"x{n}: ")
     if point != "":
-        point = list(map(int, point.split()))
+        point = list(map(float, point.split()))
         points.append(point)
     else:
         break
