@@ -50,6 +50,9 @@ print(interpolation_function)
 
 f = sympy.utilities.lambdify("x", str(interpolation_function), "numpy")
 
+str_of_function = input("Enter the function that you want to interpolate using hermit nodes: ")
+g = sympy.utilities.lambdify("x", str_of_function, "numpy")
+
 # plotting points
 fig = plt.subplot()
 fig.scatter([i[0] for i in points], [i[1] for i in points])
@@ -58,6 +61,8 @@ fig.scatter([i[0] for i in points], [i[1] for i in points])
 lower_bound = min(points, key=lambda x: x[0])[0]
 upper_bound = max(points, key=lambda x: x[0])[0]
 x_test_points = np.linspace(lower_bound - 1, upper_bound + 1,500)
-y_test_points = [f(i) for i in x_test_points] 
+y_test_points = [f(i) for i in x_test_points]
+y_test_original = [g(i) for i in x_test_points] 
 fig.plot(x_test_points, y_test_points)
+fig.plot(x_test_points, y_test_original)
 plt.show()
