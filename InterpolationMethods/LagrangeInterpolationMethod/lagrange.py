@@ -2,20 +2,27 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sympy import *
 
-# choosen_x = int(input("choose your desire point ::"))
-x = list(map(int, input("List :: ").split()))
-n = int(input("n :: "))
-fx = input("Add function :: ")
-px = float(input("Add px :: "))
+x = []
+y = []
+
+#Convert (x,y) to their determination list
+while true:
+    data = input("Add point like this format (x,y): ")
+    data = data.strip("()").replace(" ", "")
+    point = list(map(int, data.split(",")))
+    continue_point = input("Do you still want to add points? (y/n) ")
+    x.append(point[0])
+    y.append(point[1])
+    if continue_point == "n":
+        break
+
+n = int(input("Enter the degree n (for Pn(x)):: "))
+px = float(input("Enter the x-value at which to find the interpolation:: "))
+
 choosen_x = symbols("x")
-
-
 # Total Formulation
-def f(xi):
-    if fx == '':
-        return 2 * (xi) ** 2 + 4
-    else:
-        return sympify(fx).subs(symbols('x'), xi)
+def f(i):
+    return y[i]
 
 
 def L(i, x):
@@ -29,7 +36,7 @@ def L(i, x):
 def pn(x, f, n):
     sums = 0
     for i in range(n + 1):
-        sums += f(x[i]) * L(i, x)
+        sums += f(i) * L(i, x)
     return sums
 
 
