@@ -27,6 +27,12 @@ def linear_interpolation2(input_data, func):
     plt.show()
 
 
-arr = [[1, 2], [7, 7], [4, 9], [3, 6]]
-fu = '(x*x)'  # input()
+fu = input('Enter function: ')
+n = int(input('Enter point number: '))
+print('Enter points:')
+arr = []
+for _ in range(n):
+    x, y = map(int, input().split())
+    arr.append([x, y])
+
 linear_interpolation2(arr, fu)
