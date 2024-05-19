@@ -18,12 +18,17 @@ def get_divided_difference(points, start_index, end_index):
             return (( first-second )/(points[end_index][0] - points[start_index][0]),0)
         except ZeroDivisionError:
             return (diffs[(points[start_index][0],degree1+1)]/factorial(degree1+1),degree1+1)
+        
+# Reading the original function from user
+str_of_function = input("Enter the function that you want to interpolate using hermit nodes: ")
+g = sympy.utilities.lambdify("x", str_of_function, "numpy")
+
 
 # Reading the interpolation points
 n = 0
 points = []
 while(1):
-    point = input(f"x{n} + degree diff: ")
+    point = input(f"x{n} + degree differtation: ")
     if point != "":
         point = list(map(float, point.split()))
         if point[2]!=0:
@@ -50,8 +55,6 @@ print(interpolation_function)
 
 f = sympy.utilities.lambdify("x", str(interpolation_function), "numpy")
 
-str_of_function = input("Enter the function that you want to interpolate using hermit nodes: ")
-g = sympy.utilities.lambdify("x", str_of_function, "numpy")
 
 # plotting points
 fig = plt.subplot()
@@ -66,3 +69,11 @@ y_test_original = [g(i) for i in x_test_points]
 fig.plot(x_test_points, y_test_points)
 fig.plot(x_test_points, y_test_original)
 plt.show()
+
+while(1):
+    point = input(f"Enter the number that you want to interpolate: ")
+    if point != "":
+        point = list(map(float, point.split()))
+        print(f"interpolation of the point {point[0]} : {f(point[0])}.")
+    else:
+        break
