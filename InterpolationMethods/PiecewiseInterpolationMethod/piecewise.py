@@ -27,12 +27,16 @@ def linear_interpolation2(input_data, func):
     plt.show()
 
 
-fu = input('Enter function: ')
+fu = input('Enter function:(you can enter \"n\" for skip) \n')
 n = int(input('Enter point number: '))
 print('Enter points:')
 arr = []
 for _ in range(n):
-    x, y = map(int, input().split())
+    x, y = map(float, input().split())
     arr.append([x, y])
 
-linear_interpolation2(arr, fu)
+if fu == 'n':
+    linear_interpolation(arr)
+else:
+    linear_interpolation2(arr, fu)
+
