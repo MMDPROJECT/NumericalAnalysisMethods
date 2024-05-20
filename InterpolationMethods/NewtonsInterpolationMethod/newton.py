@@ -8,8 +8,6 @@ def get_divided_difference(points, start_index, end_index):
         return (points[end_index][1] - points[start_index][1])/(points[end_index][0] - points[start_index][0])
     else: 
         return (get_divided_difference(points, start_index + 1, end_index) - get_divided_difference(points, start_index, end_index - 1))/(points[end_index][0] - points[start_index][0])
-
-    
     
 def interpolation_with_points():    
     # Reading the interpolation points
@@ -79,7 +77,8 @@ def interpolation_with_fx():
         term = divided_difference * pi
         interpolation_function += term
 
-    print(interpolation_function)
+    simplified = sympy.simplify(interpolation_function)
+    print(simplified)
 
     interpolation_function = sympy.utilities.lambdify("x", str(interpolation_function), "numpy")
 
