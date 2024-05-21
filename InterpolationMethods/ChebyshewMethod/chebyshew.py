@@ -5,7 +5,6 @@ import sympy.utilities.lambdify
 def get_chebyshew_roots(n: int):
     n = n + 1
     ks = np.arange(0, n)
-    print(ks)
     x = np.cos(((2 * ks + 1) * np.pi)/(2 * n))
     return x
 
