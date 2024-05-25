@@ -96,7 +96,7 @@ def interpolation_with_fx():
     fig.plot(x_test_points, y_actual_points)
     plt.show()
 
-def main():
+def newton_main():
     print("1. Enter f(x) with points")
     print("2. Enter interpolation points in this format: (xi, f(xi))")
     print("=> ", end='')
@@ -109,4 +109,5 @@ def main():
         interpolation_with_points()
 
 
-main()
+if __name__ == '__main__':
+    newton_main()
