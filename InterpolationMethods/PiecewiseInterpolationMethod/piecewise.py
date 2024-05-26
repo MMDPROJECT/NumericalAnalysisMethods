@@ -69,27 +69,27 @@ def cube_spline(xp, yp, function='null'):
     plt.ylabel('y')
     plt.show()
 
+def main_piecewise():
+    # get inputs
+    n = int(input('Enter number of points: '))
+    print('Enter points:')
+    arr = []
+    for _ in range(n):
+        x, y = map(float, input().split())
+        arr.append([x, y])
+    deg = int(input("Choose interpolation degree:(1 or 3)\n"))
+    fun = input('Enter function:(you can enter \"n\" for skip) \n')
 
-# get inputs
-n = int(input('Enter number of points: '))
-print('Enter points:')
-arr = []
-for _ in range(n):
-    x, y = map(float, input().split())
-    arr.append([x, y])
-deg = int(input("Choose interpolation degree:(1 or 3)\n"))
-fun = input('Enter function:(you can enter \"n\" for skip) \n')
+    # sort input
+    arr = sorted(arr)
+    x = list(i[0] for i in arr)
+    y = list(i[1] for i in arr)
 
-# sort input
-arr = sorted(arr)
-x = list(i[0] for i in arr)
-y = list(i[1] for i in arr)
-
-# add spline func to plot
-if deg == 1:
-    linear_spline(x, y, fun)
-elif deg == 3:
-    cube_spline(x, y, fun)
+    # add spline func to plot
+    if deg == 1:
+        linear_spline(x, y, fun)
+    elif deg == 3:
+        cube_spline(x, y, fun)
 
 # 0 0
 # 1 1
