@@ -24,7 +24,7 @@ def get_divided_difference(f_t, nodes: np.ndarray, start, end):
     
 def get_divided_differences(f_t, nodes: np.ndarray):
     n = nodes.size
-    divided_differences = np.empty(n, dtype = "float128")
+    divided_differences = np.empty(n, dtype = "float")
     for i in range(n):
         # print(type(get_divided_difference(f_t, nodes, 0, i)))
         divided_differences[i] = get_divided_difference(f_t, nodes, 0, i)

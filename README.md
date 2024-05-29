@@ -27,3 +27,5 @@ python main.py
 
 5. Piecewise:
 
+## Contrbution:
+Contributions are welcome! Please feel free to submit a pull request.
