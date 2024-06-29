@@ -23,14 +23,18 @@ python main.py
 1. Chebyshew:
     
 2. Hermit:
-
     ![](shots/hermit.png)
-
 3. Lagrange:
 
 4. Newton:
 
 5. Piecewise:
-
+### Integral:
+1. Gaussian:
+2. Newton_cotes:
+3. Rectangle:
+4. Romberg:
+### Non linear systems:
+![](shots/nonLinearSystem.png)
 ## Contrbution:
 Contributions are welcome! Please feel free to submit a pull request.

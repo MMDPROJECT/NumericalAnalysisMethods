@@ -7,6 +7,7 @@ from InterpolationMethods.LagrangeInterpolationMethod.lagrangemam import main_la
 # from IntegralMethods.Newton_cotes import main_newton_cotes
 # from IntegralMethods.Rectangler_method import main_rectangle
 # from IntegralMethods.Romberg_rule import main_romberg
+from NonLinearSystem.nonLinearSystem import main_non_linear
 
 def choose_method_interpolation(inp):
     if inp=='4':
@@ -36,8 +37,10 @@ def choose_mode(inp):
         choose_method_interpolation(inp = input("Enter the method that you want:\n1-Chebyshew\n2-Hermit\n3-Lagrange\n4-Newton\n5-piecewie\n"))
     elif(inp=='2'):
         choose_method_integral(inp = input("Enter the method that you want:\n1-Gaussian_Quadrature\n2-Newton_cotes\n3-Rectangler_method\n4-Romberg_rule\n"))
+    elif(inp=='3'):
+        main_non_linear()
 
-choose_mode(inp = input("Enter the mode that you want:\n1-Interpolation\n2-Integral\n"))        
+choose_mode(inp = input("Enter the mode that you want:\n1-Interpolation\n2-Integral\n3-Nonlinear system\n"))        
 
 
     
