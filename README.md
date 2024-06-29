@@ -1,4 +1,7 @@
 # Number Analysis
+<div align="center">
+<img src="shots/photo12281497396.jpg" width="50%">
+</div>
 
 ## Intruduction
 This repository encompasses a variety of numerical analysis techniques, including root finding, interpolation, regression, integration, and differentiation.
@@ -20,6 +23,8 @@ python main.py
 1. Chebyshew:
     
 2. Hermit:
+
+    ![](shots/hermit.png)
 
 3. Lagrange:
 
