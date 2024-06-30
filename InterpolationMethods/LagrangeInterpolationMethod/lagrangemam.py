@@ -10,6 +10,7 @@ def main_lagrange():
     # Convert (x,y) to their determination list
     fx = input("Enter the function or press enter if you just want to enter data points: ")
     if fx == "":
+        fx = None
         print()
         print("********************************")
         print("Add point like this format (x,y)")
@@ -79,14 +80,17 @@ def main_lagrange():
     y_range = [float(p.subs(chosen_x, x_val)) for x_val in x_range]
 
     plt.figure(figsize=(12, 6))
-    plt.plot(x_range, y_range)
+    plt.plot(x_range, y_range, color='blue', markersize=0.25, linewidth=1, linestyle='-', marker='o', label= f'Pn(x)')
+    if(fx is not None):
+        plt.plot(x_range, [fx(x) for x in x_range], color='red', markersize=1, linewidth=3, label= f"f(x)")
     plt.scatter(
-        px, [float(p.subs(chosen_x, px_val)) for px_val in px], color="g", marker="o"
+        px, [float(p.subs(chosen_x, px_val)) for px_val in px]
     )
     plt.title(f"P{n}")
     plt.xlabel("x")
     plt.ylabel("y")
-    plt.grid()
+    plt.grid(True)
+    plt.legend()
     plt.show()
 
 if __name__ == "__main__":

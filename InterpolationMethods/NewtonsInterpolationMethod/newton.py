@@ -47,6 +47,7 @@ def interpolation_with_points():
     x_test_points = np.linspace(lower_bound - 1, upper_bound + 1)
     y_test_points = [f(i) for i in x_test_points] 
     fig.plot(x_test_points, y_test_points)
+    plt.legend()
     plt.show()
     
 def interpolation_with_fx(): 

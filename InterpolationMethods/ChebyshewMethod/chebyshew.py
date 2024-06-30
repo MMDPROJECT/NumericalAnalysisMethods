@@ -83,8 +83,8 @@ def chebyshew_main():
         print(f"Value of original function at {single_x_input} : {f_x(single_x_input)}")
 
     plt.figure(figsize=(8, 6))  # Adjust the figure size if needed
-    plt.plot(xs, Y, color='red', markersize=1, linewidth=2, linestyle='dashdot', marker='*', label= f"f(x) = {str(f_x_sym)}")
-    plt.plot(xs, Y_hat, color='blue', markersize=0.25, linewidth=0.5, linestyle='-', marker='o', label= f'Pn(x)')
+    plt.plot(xs, Y, color='red', markersize=1, linewidth=3, linestyle='dashdot', marker='*', label= f"f(x) = {str(f_x_sym)}")
+    plt.plot(xs, Y_hat, color='blue', markersize=0.25, linewidth=1, linestyle='-', marker='o', label= f'Pn(x)')
     # Customize the plot
     plt.title("Function Approximation")
     plt.xlabel("x")
