@@ -37,5 +37,9 @@ python main.py
 4. Romberg:
 ### Non linear systems:
 ![nonLinearSystem](shots/nonLinearSystem.png)
+### Differential:
+1. Taylor series
+   ![taylorSeries](shots/diif_tylor.JPG)
+2. Interpolation
 ## Contrbution:
 Contributions are welcome! Please feel free to submit a pull request.

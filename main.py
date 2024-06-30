@@ -8,6 +8,8 @@ from InterpolationMethods.LagrangeInterpolationMethod.lagrangemam import main_la
 # from IntegralMethods.Rectangler_method import main_rectangle
 # from IntegralMethods.Romberg_rule import main_romberg
 from NonLinearSystem.nonLinearSystem import main_non_linear
+from DifferentiationMethods.differentiation_with_interpolation import main_derivative_interpolation
+from DifferentiationMethods.differentiation_with_taylor_series import main_derivative_taylor
 
 def choose_method_interpolation(inp):
     if inp=='4':
@@ -31,6 +33,12 @@ def choose_method_integral(inp):
     # elif inp=='4':
     #     main_romberg()
     pass
+
+def choose_method_diff(inp):
+    if(inp=='1'):
+        main_derivative_interpolation()
+    elif(inp=='2'):
+        main_derivative_taylor()
         
 def choose_mode(inp):
     if(inp=='1'):
@@ -39,8 +47,10 @@ def choose_mode(inp):
         choose_method_integral(inp = input("Enter the method that you want:\n1-Gaussian_Quadrature\n2-Newton_cotes\n3-Rectangler_method\n4-Romberg_rule\n"))
     elif(inp=='3'):
         main_non_linear()
+    elif(inp=='4'):
+        choose_method_diff(inp = input("Enter the method that you want:\n1-diff with interpolation\n2-diff with taylor series\n"))
 
-choose_mode(inp = input("Enter the mode that you want:\n1-Interpolation\n2-Integral\n3-Nonlinear system\n"))        
+choose_mode(inp = input("Enter the mode that you want:\n1-Interpolation\n2-Integral\n3-Nonlinear system\n4-Diffrentiation\n"))        
 
 
     

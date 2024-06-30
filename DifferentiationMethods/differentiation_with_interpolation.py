@@ -31,22 +31,22 @@ def get_approximation_expression(f, xs, k, h, n, s):
 def eval_approximation_expression_at_x(g, h, x0, x_input):
     s = (x_input - x0) / h
     return g.subs([('s', s)])
-        
-f_sym = sympy.sympify(input("Enter the function in terms of x: ")).subs(e, "exp")
+def main_derivative_interpolation():        
+    f_sym = sympy.sympify(input("Enter the function in terms of x: ")).subs(e, "exp")
 
-f = sympy.lambdify(x, f_sym, 'numpy') # input function of variable x
+    f = sympy.lambdify(x, f_sym, 'numpy') # input function of variable x
 
-h = float(input('Enter the h value: '))
+    h = float(input('Enter the h value: '))
 
-x_input = float(input('Enter the x-value that you want to calculate the derivative in: '))
+    x_input = float(input('Enter the x-value that you want to calculate the derivative in: '))
 
-k = int(input("Enter k: "))
+    k = int(input("Enter k: "))
 
-left = np.arange(x_input - 5 * h, x_input, h)
-right = np.arange(x_input, x_input + 5 * h + h, h)
+    left = np.arange(x_input - 5 * h, x_input, h)
+    right = np.arange(x_input, x_input + 5 * h + h, h)
 
-xs = np.concatenate((left, right))
-n = len(xs) - 1
-g = get_approximation_expression(f, xs, k, h, n, s)
-print(f"approximated value : {eval_approximation_expression_at_x(g, h, xs[0], x_input)}")
-print(f"actual value {f_sym.diff(x, k).subs(x, x_input)}")
+    xs = np.concatenate((left, right))
+    n = len(xs) - 1
+    g = get_approximation_expression(f, xs, k, h, n, s)
+    print(f"approximated value : {eval_approximation_expression_at_x(g, h, xs[0], x_input)}")
+    print(f"actual value {f_sym.diff(x, k).subs(x, x_input)}")

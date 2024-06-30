@@ -71,5 +71,3 @@ def main_derivative_taylor():
         if inp == 'n':
             break
     
-
-main_derivative_taylor()
