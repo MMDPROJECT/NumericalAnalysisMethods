@@ -1,6 +1,5 @@
 import sympy
 import matplotlib.pyplot as plt
-import seaborn as sns
 import numpy as np
 
 def forward_difference(f, x, h):
@@ -16,20 +15,18 @@ def second_derivative(f, x, h):
     return (f(x + h) - 2 * f(x) + f(x - h)) / (h * h)
 
 def compute_derivative(f, x_input, h, method):
-    if method == '1':
+    if method == 1:
         return forward_difference(f, x_input, h)
-    elif method == '2':
+    elif method == 2:
         return backward_difference(f, x_input, h)
-    elif method == '3':
+    elif method == 3:
         return central_difference(f, x_input, h)
-    elif method == '4':
+    elif method == 4:
         return second_derivative(f, x_input, h)
     else:
         raise ValueError("Invalid method")
     
-def plot_function_and_tangent(f, x_input, derivative, h):
-    sns.set(style="darkgrid")
-    
+def plot_function_and_tangent(f, x_input, derivative, h):    
     x_vals = np.linspace(x_input - 10, x_input + 10, 400)
     y_vals = f(x_vals)
     
@@ -37,8 +34,8 @@ def plot_function_and_tangent(f, x_input, derivative, h):
     
     plt.figure(figsize=(10, 6))
     
-    sns.lineplot(x=x_vals, y=y_vals, label='Function', linewidth=2.5)
-    sns.lineplot(x=x_vals, y=tangent_line, label='Tangent Line', linestyle='--', linewidth=2.5)
+    plt.plot(x_vals, y_vals, label='Function', linewidth=2.5)
+    plt.plot(x_vals, tangent_line, label='Tangent Line', linestyle='--', linewidth=2.5)
     plt.scatter([x_input], [f(x_input)], color='red', zorder=5)
     
     plt.title('Function and Tangent Line', fontsize=16)
@@ -57,17 +54,18 @@ def main_derivative_taylor():
     while True:
         x_input = float(input('Enter the x that you want to calculate the derivative in: '))
         h = float(input('Enter the h value: '))
-        method = input(""" Enter the numerical method that you want to be used in calculating the derivative
+        method = int(input("""Enter the numerical method that you want to be used in calculating the derivative
         1. Forward Difference
         2. Backward Difference
         3. Central Difference
         4. Second Derivative
-        """)
+        """))
         
         derivative = compute_derivative(f, x_input, h, method)
         print(f"Calculated derivative: {derivative}")
-        
-        plot_function_and_tangent(f, x_input, derivative, h)
+
+        if 1 <= method <= 3:
+            plot_function_and_tangent(f, x_input, derivative, h)
         
         inp = input("Continue?(y/n)")
         if inp == 'n':
