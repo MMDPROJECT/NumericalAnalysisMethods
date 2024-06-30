@@ -1,0 +1,5 @@
+numpy
+matplotlib
+sympy
+PySide6
+tkinter
