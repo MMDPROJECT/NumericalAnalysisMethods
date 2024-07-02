@@ -44,8 +44,6 @@ def plot_function_and_tangent(f, x_input, derivative, h):
     plt.legend(fontsize=12)
     plt.show()
     
-    
-    
 def main_derivative_taylor():
     x, e = sympy.symbols('x, e')
     

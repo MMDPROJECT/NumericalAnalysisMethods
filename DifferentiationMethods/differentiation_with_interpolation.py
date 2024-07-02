@@ -31,6 +31,7 @@ def get_approximation_expression(f, xs, k, h, n, s):
 def eval_approximation_expression_at_x(g, h, x0, x_input):
     s = (x_input - x0) / h
     return g.subs([('s', s)])
+
 def main_derivative_interpolation():        
     f_sym = sympy.sympify(input("Enter the function in terms of x: ")).subs(e, "exp")
 
@@ -40,7 +41,7 @@ def main_derivative_interpolation():
 
     x_input = float(input('Enter the x-value that you want to calculate the derivative in: '))
 
-    k = int(input("Enter k: "))
+    k = int(input("Enter k(the order of derivation): "))
 
     left = np.arange(x_input - 5 * h, x_input, h)
     right = np.arange(x_input, x_input + 5 * h + h, h)
