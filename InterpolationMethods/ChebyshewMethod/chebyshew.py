@@ -2,9 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sympy
 
-# Define symbols for mathematical operations
-x, t, e = sympy.symbols('x t e')
-
 def get_chebyshew_roots(n: int):
     """
     Generate Chebyshev nodes.
@@ -91,7 +88,7 @@ def get_t_of_x(a: float, b: float, x: sympy.Symbol):
     Returns:
     Expression converting x to t.
     """
-    return sympy.sympify("(2/(b - a))*(x - a) - 1")
+    return sympy.sympify("(2/(b - a))*(x - a) - 1").subs({'a': a, 'b': b})
 
 def get_x_of_t(a: float, b: float, t: sympy.Symbol):
     """
@@ -104,7 +101,7 @@ def get_x_of_t(a: float, b: float, t: sympy.Symbol):
     Returns:
     Expression converting t back to x.
     """
-    return sympy.sympify("((t + 1)*(b - a)/2) + a")
+    return sympy.sympify("((t + 1)*(b - a)/2) + a").subs({'a': a, 'b': b})
 
 def P_n_of_t(f_t_sym, nodes: np.ndarray, x: sympy.Symbol, t: sympy.Symbol, a: float, b: float):
     """
@@ -134,8 +131,12 @@ def chebyshew_main():
     """
     Main function to perform Chebyshev interpolation and plotting.
     """
+
+    # Define symbols for mathematical operations
+    x, t, e = sympy.symbols('x t e')
+
     # Input handling
-    f_x_sym = sympy.sympify(input("Enter the function that you want to interpolate using Chebyshev nodes: "))
+    f_x_sym = sympy.sympify(input("Enter the function that you want to interpolate using Chebyshev nodes: ")).subs(e, 'exp')
     n = int(input("Enter the degree of the polynomial that you want to interpolate the function with: "))
     a, b = map(float, input("Enter the start and end intervals that you want to plot the function and its interpolation: ").split())
     
@@ -143,6 +144,7 @@ def chebyshew_main():
     x_of_t = get_x_of_t(a, b, t)
     t_of_x = get_t_of_x(a, b, x)
     f_t_sym = f_x_sym.subs(x, x_of_t)
+    f_x = sympy.utilities.lambdify('x', f_x_sym, "numpy")
     
     # Evaluation and plotting
     chebyshew_nodes = get_chebyshew_roots(n)
@@ -153,7 +155,7 @@ def chebyshew_main():
     
     # Plotting
     xs = np.linspace(a, b, 100)
-    Y = f_x_sym.subs(x, xs)
+    Y = f_x(xs)
     Y_hat = p_n_of_x(xs)
     
     plt.figure(figsize=(8, 6))
@@ -165,5 +167,5 @@ def chebyshew_main():
     plt.grid(True)
     plt.legend()
     plt.show()
-
-chebyshew_main()
+if __name__ == '__main__':
+    chebyshew_main()

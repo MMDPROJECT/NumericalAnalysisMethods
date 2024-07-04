@@ -108,6 +108,8 @@ def main_non_linear():
     # Step 7: Plotting
     plot_functions_and_points(f, g, history)
     
+if __name__ == '__main__':
+    main_non_linear()
 # x**2 + y**2 - 4
 # x**2 - y**2 - 1
 # 1 1

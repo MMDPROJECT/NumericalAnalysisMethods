@@ -7,7 +7,7 @@ from InterpolationMethods.LagrangeInterpolationMethod.lagrangemam import main_la
 # from IntegralMethods.Newton_cotes import main_newton_cotes
 # from IntegralMethods.Rectangler_method import main_rectangle
 # from IntegralMethods.Romberg_rule import main_romberg
-from NonLinearSystem.nonLinearSystem import main_non_linear
+from NonLinearSystem.non_linear_systems import main_non_linear
 from DifferentiationMethods.differentiation_with_interpolation import main_derivative_interpolation
 from DifferentiationMethods.differentiation_with_taylor_series import main_derivative_taylor
 

@@ -72,5 +72,5 @@ def main_derivative_taylor():
         inp = input("Continue? (y/n): ")
         if inp.lower() == 'n':
             break
-
-main_derivative_taylor()
+if __name__ == '__main__':
+    main_derivative_taylor()

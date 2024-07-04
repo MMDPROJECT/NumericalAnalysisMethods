@@ -98,4 +98,5 @@ def hermit_main():
         point = list(map(float, point.split()))
         print(f"Interpolation of the point {point[0]}: {f(point[0])}")
 
-hermit_main()
+if __name__ == '__main__':
+    hermit_main()
