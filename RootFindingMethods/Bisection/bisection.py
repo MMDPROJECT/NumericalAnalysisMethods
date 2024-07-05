@@ -32,20 +32,21 @@ def bisection_method(f, a, b, e=1e-2, d=2, i=20):
         # Store the current iteration details.
         iterations.append([a, f_a, b, f_b, c, f_c])
         
-        # Check if any of the evaluated values is close enough to zero (root).
-        if f_a == 0 or f_b == 0 or f_c == 0:
-            return c, iterations
-        
-        # Check if the absolute value of the function at the midpoint is less than or equal to the desired error,
-        # or if the width of the interval is less than or equal to the desired error.
+        # checking if either a, b or c is the root 
+        if f_a == 0:
+            return [a, iterations]
+        elif f_c == 0:
+            return [c, iterations]
+        elif f_b == 0:
+            return [b, iterations]
+        # checking if the error is low
         if abs(f_c) <= e or abs(a - b) <= e:
-            return c, iterations
-        
-        # Update the interval based on the sign of the function at the start and midpoint.
-        if f_a * f_c < 0:
-            b = c
+            return [c, iterations]
         else:
-            a = c
+            if f_a * f_c < 0:
+                b = c
+            else: 
+                a = c
     
     # Return the last approximation and the list of iterations if the maximum number of iterations is reached without finding a root.
-    return a, iterations
+    return (a + b)/2, iterations
