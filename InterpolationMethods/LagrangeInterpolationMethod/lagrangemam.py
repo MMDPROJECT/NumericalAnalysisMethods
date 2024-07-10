@@ -17,26 +17,24 @@ def main_lagrange():
         print("********************************")
         print()
         while True:
-            data = input("(x" + str(index) + ", y" + str(index) + "):: ")
+            point = input("(x" + str(index) + ", y" + str(index) + "):: ")
+            if not point:
+                break
             index += 1
-            data = data.strip("()").replace(" ", "")
-            point = list(map(float, data.split(",")))
-            continue_point = input("Do you still want to add points? (y/n) ")
+            point = list(map(int, point.split()))
             x.append(point[0])
             y.append(point[1])
-            if continue_point == "n":
-                break
     else:
         fx = sympy.utilities.lambdify("x", fx, "numpy")
         while True:
-            data = input("x" + str(index) + ":: ")
+            point = input("x" + str(index) + ":: ")
+            if not point:
+                break
             index += 1
-            point = list(map(float, data.split()))
-            continue_point = input("Do you still want to add points? (y/n) ")
+            point = list(map(float, point.split()))
             x.append(point[0])
             y.append(fx(point[0]))
-            if continue_point == "n":
-                break
+
     print()
     n = int(input("Enter the degree n (for Pn(x)):: "))
     print()
@@ -93,5 +91,5 @@ def main_lagrange():
     plt.legend()
     plt.show()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main_lagrange()
